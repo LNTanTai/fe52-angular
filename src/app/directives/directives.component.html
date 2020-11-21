@@ -14,7 +14,7 @@
 </div> -->
 
 <!-- da dang nhap isLogin = true -->
-<div *ngIf="isLogin">
+<div *ngIf="isLogin; else loginTemplate">
     <p>Hello</p>
     <button
     (click) = "isLogin = false"
