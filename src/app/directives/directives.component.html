@@ -1,0 +1,28 @@
+<!-- *ngIF: an hien tag/component -->
+<h1 *ngIf="isActive">OK</h1>
+<button
+    (click)="isActive = !isActive">
+    Toggle
+</button>
+
+<!-- chua dang nhap isLogin = false -->
+<!-- <div *ngIf="!isLogin">
+    <p>Login</p>
+    <button
+    (click) = "isLogin = true"
+    >Dang nhap</button>
+</div> -->
+
+<!-- da dang nhap isLogin = true -->
+<div *ngIf="isLogin">
+    <p>Hello</p>
+    <button
+    (click) = "isLogin = false"
+    >Dang xuat</button>
+</div>
+
+<!-- ng-temlate: mac dinh ko duoc render ra giao dien, minh can phai phai goi toi thi no moi render ra -->
+<ng-template #loginTemplate>
+    <p>Login</p>
+    <button (click) = "isLogin = true">Dang Nhap</button>
+</ng-template>
