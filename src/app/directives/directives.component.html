@@ -22,7 +22,54 @@
 </div>
 
 <!-- ng-temlate: mac dinh ko duoc render ra giao dien, minh can phai phai goi toi thi no moi render ra -->
+<!-- duoc su dung su dung lai nhieu lan -->
 <ng-template #loginTemplate>
     <p>Login</p>
     <button (click) = "isLogin = true">Dang Nhap</button>
 </ng-template>
+
+<!-- ngSwitch: vế bên phải nhận vào là 1 cái chuỗi,  [ngSwitch]: vế bên phải nhận vào là 1 biến -->
+<!-- *ngSwitchCase: vế bên phải nhận vào luôn luôn là 1 biến -->
+<!-- => điểm khác biệt là dấu * trước tên Directive -->
+<div [ngSwitch]="color">
+    <p *ngSwitchCase="'red'">RED</p>
+    <p *ngSwitchCase="'blue'">BLUE</p>
+    <p *ngSwitchCase="'green'">GREEN</p>
+    <p *ngSwitchDefault>Default</p>
+</div>
+
+<select [value]="color" (change)="color = $event.target.value">
+    <option value="">Default</option>
+    <option value="red">RED</option>
+    <option value="blue">BLUE</option>
+    <option value="green">GREEN</option>
+</select>
+
+<p *ngFor = "let sv of dssv; let idx = index">
+    {{idx + 1}} - {{sv.hoTen}} - {{sv.lop}}
+</p>
+
+<!-- Ko thể có 2 structural directive trên cùng 1 tag -->
+<div class="d-flex" >
+    <!-- ng-container tuong duong Fragment bên react, tag này sẽ không được render ra giao diện -->
+    <ng-container *ngIf="dssv">
+        <p *ngFor = "let sv of dssv; index as idx">
+            {{idx + 1}} - {{sv.hoTen}} - {{sv.lop}}
+        </p>
+    </ng-container>
+</div>
+
+<!-- ng-container kết hợp ng-template -->
+<!-- Tái sử dụng 1 layout trong component -->
+
+<!-- tạo ra layout để tái sử dụng -->
+<ng-template #templateAlert>
+    <div class="alert alert-danger">
+        <strong>Alert</strong>
+    </div>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="templateAlert"></ng-container>
+<ng-container *ngTemplateOutlet="templateAlert"></ng-container>
+<ng-container *ngTemplateOutlet="templateAlert"></ng-container>
+<ng-container *ngTemplateOutlet="templateAlert"></ng-container>
