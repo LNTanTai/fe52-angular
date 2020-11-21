@@ -14,6 +14,11 @@ export class DirectivesComponent implements OnInit {
     {hoTen: "Van", lop: "FE53"},
     {hoTen: "Duy", lop: "FE54"},
   ];
+
+  template: string = "<span class='text-danger'>Hello</span>"
+
+  imageUrl: string="https://ezpc.vn/media/product/2147_hulk_led_20cm_2_min.png"
+
   constructor() { }
 
   ngOnInit(): void {
