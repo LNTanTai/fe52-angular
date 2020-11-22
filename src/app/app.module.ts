@@ -1,8 +1,10 @@
+import { ShoppingModule } from './shopping/shopping.module';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
-
+import {MovieModule} from "./movie/movie.module"
 import { HomeModule } from './home/home.module';
 import { Baitap2Module } from './baitap2/baitap2.module';
 import { DataBindingModule } from './data-binding/data-binding.module';
@@ -22,10 +24,11 @@ import {DirectivesModule} from "./directives/directives.module"
   // 2 loại module:
   // - Module do angular cung cấp: RouterModule, HttpClientModule
   // - Module do dev định nghĩa: HomeModule
-  imports: [BrowserModule, HomeModule, Baitap2Module, DataBindingModule, DirectivesModule],
+  imports: [BrowserModule, HomeModule, Baitap2Module, DataBindingModule, DirectivesModule, MovieModule, ShoppingModule],
   // Nơi khai báo các services
   providers: [],
   // Khai báo AppComponent là component khởi chạy đầu tiên
   bootstrap: [AppComponent],
+
 })
 export class AppModule {}
