@@ -1,0 +1,12 @@
+<h1 class="p-3 mb-2 bg-primary text-white text-center">Đặt vé xe buýt hãng Cybersoft</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="p-3 mb-2 bg-dark text-capitalize text-center col-sm-6">
+            <app-danh-sach-ghe #danhSachGhe (onSelect)="handleSelect($event)"></app-danh-sach-ghe>
+        </div>
+        <div class="text-capitalize text-center col-sm-6">
+            <app-danh-sach-dang-chon #danhSachDangChon (onRemove)="handleRemove($event)"></app-danh-sach-dang-chon>
+        </div>
+    </div>
+</div>

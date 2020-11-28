@@ -1,0 +1,9 @@
+<div class="p-2 mb-3 bg-warning w-100 bg-sencondary">
+    <h3 class="text-white">driver</h3>
+</div>
+
+<div class="row">
+    <div *ngFor="let seat of seatList" class="col-sm-3">
+        <app-ghe #seat [seat]="seat" (onSelect)="handleSelect($event)"></app-ghe>
+    </div>
+</div>

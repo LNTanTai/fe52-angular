@@ -1,0 +1,8 @@
+<h3 class="p-3 mb-2 bg-success text-white">
+    Danh sach ghe da dat ({{selectedList.length}})
+</h3>
+
+<p *ngFor="let item of selectedList" class="p-3 mb-2 bg-dark text-white">
+    Ghe: {{item.name}} - {{item.price}}
+    <a class="text-danger" (click)="handleRemove(item)">[Delete]</a>
+</p>
